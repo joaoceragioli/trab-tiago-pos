@@ -1,0 +1,17 @@
+/* .inputs {
+    width: 200px;
+}
+
+input {
+    float: right;
+} */
+
+textarea {
+    resize: none;
+}
+
+.block {
+    background:linear-gradient(rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0) 100%),url('https://c.tenor.com/aSrFuDvN9AwAAAAM/bender-waiting-robot.gif') no-repeat;
+    width: 100%;
+    height: 400px;
+}
