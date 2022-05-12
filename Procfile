@@ -1,1 +1,1 @@
-web: gurnicorn app:app
+web: gurnicorn wsgi:app
