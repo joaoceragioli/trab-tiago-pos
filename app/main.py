@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -6,14 +6,12 @@ app = Flask(__name__)
 def helloworld():
     return "API LINDA!"
 
-@app.route('/macaco')
+@app.route('/macaco', methods=["GET"])
 def monkeyday():
     return render_template('index.html')
 
-@app.route('/<int:number>/')
-def incrementer(number):
-    return "Incremented number is " + str(number+1)
-    
-@app.route('/<string:name>/')
-def hello(name):
-    return "Hello " + name
+@app.route('/ocrdobigas', methods=["POST"])
+def reviewpost():
+     input_json = request.get_json(force=True) 
+     dictToReturn = {'text':input_json['text']}
+     return jsonify(dictToReturn)
