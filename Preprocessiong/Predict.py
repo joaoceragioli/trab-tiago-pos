@@ -2,16 +2,21 @@ import pickle
 from re import X
 from Treatment import transform
 
-s = 'Bigode não confia em mim'
-
-x = transform(s)
-
-pkl_filename = './sentiment_anal.pkl'
-
-with open(pkl_filename, 'rb') as file:
-    pickle_model = pickle.load(file)
+def predict(s:str):
 
 
-pred = pickle_model.predict([[x]])
+    vectorizer = pickle.load(open("vector.pickel", "rb"))
 
-print ('A avaliação é: ' + pred)
+    x = transform(s)
+
+    da = vectorizer.transform([x])
+    print(da)
+
+    pkl_filename = './sentiment_anal.pkl'
+
+    with open(pkl_filename, 'rb') as file:
+        pickle_model = pickle.load(file)
+
+
+    pred = pickle_model.predict(da)
+    return pred[0]

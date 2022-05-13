@@ -2,6 +2,7 @@
 
 from __core__ import no_alphas, remontar_frase, remove_stops, remove_acento
 import json
+import pickle
 import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -12,7 +13,7 @@ from string import punctuation
 
 def transform(s:str):
         
-    p1 = word_tokenize('Esse filme é ruim para um carélho.'.lower(), language= 'portuguese')
+    p1 = word_tokenize(s.lower(), language= 'portuguese')
     print(p1)
 
 
