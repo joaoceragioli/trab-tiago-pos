@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS, cross_origin
+from preprocessing.Predict import predict
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -17,5 +18,11 @@ def monkeyday():
 @cross_origin()
 def reviewpost():
      input_json = request.get_json(force=True) 
-     dictToReturn = {'text':input_json['text']}
-     return jsonify(dictToReturn)
+     CU = predict(input_json['text'])
+     match CU:
+        case 1:
+            final = "POSITIVO?"
+        case 0:
+            final = "NEGATIVO?"
+     res = { 'CU' : str(final) } 
+     return res

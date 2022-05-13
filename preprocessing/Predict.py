@@ -1,18 +1,18 @@
 import pickle
 from re import X
-from Treatment import transform
+from .Treatment import transform
 
 def predict(s:str):
 
 
-    vectorizer = pickle.load(open("vector.pickel", "rb"))
+    vectorizer = pickle.load(open("preprocessing/vector.pickel", "rb"))
 
     x = transform(s)
 
     da = vectorizer.transform([x])
     print(da)
 
-    pkl_filename = './sentiment_anal.pkl'
+    pkl_filename = 'preprocessing/sentiment_anal.pkl'
 
     with open(pkl_filename, 'rb') as file:
         pickle_model = pickle.load(file)

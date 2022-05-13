@@ -1,8 +1,6 @@
 #tokenizing and lowercasing
 
-from __core__ import no_alphas, remontar_frase, remove_stops, remove_acento
-import json
-import pickle
+from .__core__ import no_alphas, remontar_frase, remove_stops, remove_acento
 import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
