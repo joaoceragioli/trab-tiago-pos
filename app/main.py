@@ -24,5 +24,5 @@ def reviewpost():
             final = "POSITIVO"
         case 0:
             final = "NEGATIVO"
-     res = { 'CU' : str(final) } 
+     res = { 'sentiment' : str(final) } 
      return res
