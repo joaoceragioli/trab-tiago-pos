@@ -4,11 +4,14 @@ function submit() {
     // Seta tipo de requisição: Post e a URL da API
     ajax.open("POST", "https://trab-tiago-pos.herokuapp.com/ocrdobigas", true);
     ajax.setRequestHeader("Content-type", "application/json");
+    ajax.setRequestHeader('Access-Control-Allow-Origin', '*')
     
     // Seta paramêtros da requisição e envia a requisição
-    ajax.send({
-        "text": "bigas"
-    });
+    let post = JSON.stringify({
+        text: "bigas"
+    })
+
+    ajax.send(post);
     
     // Cria um evento para receber o retorno.
     ajax.onreadystatechange = function() {
