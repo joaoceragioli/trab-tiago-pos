@@ -21,8 +21,8 @@ def reviewpost():
      CU = predict(input_json['text'])
      match CU:
         case 1:
-            final = "POSITIVO?"
+            final = "POSITIVO"
         case 0:
-            final = "NEGATIVO?"
+            final = "NEGATIVO"
      res = { 'CU' : str(final) } 
      return res
