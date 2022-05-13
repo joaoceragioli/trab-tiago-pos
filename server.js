@@ -20,7 +20,7 @@ function submit() {
         
             var data = ajax.responseText;
             
-            document.getElementById('result').textContent = JSON.parse(data).text
+            document.getElementById('result').textContent = JSON.parse(data).sentiment
         }
     }
 }
